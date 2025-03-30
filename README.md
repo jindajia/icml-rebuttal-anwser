@@ -1,6 +1,5 @@
 # Scalability Experiments
 **Table1: TFLOPs comparison between SDP4Bit and DUO4Bit across different model scales on 32 A100 GPUs.**  
-*The sequence length is uniformly set to 4096, except for the 18B model, which uses a sequence length of 2048 due to memory constraints.*
 
 | **Model Size** | **SDP4Bit** | **DUO4Bit** |
 |----------------|-------------|-------------|
@@ -12,6 +11,7 @@
 
 **Table2: Model training configuration for scalability experiments.**
 
+*The sequence length is uniformly set to 4096, except for the 18B model, which uses a sequence length of 2048 due to memory constraints.*
 | **Model Size** | **Tensor Parallel Size** | **Pipeline Parallel Size** | **Grad Accum Step** | **Microbatch Size** | **Sequence Length** |
 |----------------|---------------------------|-----------------------------|----------------------|----------------------|----------------------|
 | 1.3B           | 4                         | 1                           | 32           | 4            | 4096                 |
