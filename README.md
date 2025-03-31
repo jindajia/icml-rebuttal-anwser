@@ -1,6 +1,7 @@
 # Scalability Experiments
-**Table1: TFLOPs comparison between SDP4Bit and DUO4Bit across different model scales on 32 A100 GPUs.**  
+**Table1: TFLOPs comparison between SDP4Bit and DUO4Bit across different model scales on 32 A100 GPUs.** 
 
+DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demonstrating minimal overhead. The 6.7B model enables tensor parallelism, and DUO shows no performance impact. The slight drop in TFLOPs for the 13B and 18B models is attributed to DUO’s communication occasionally delaying pipeline communication, as both involve cross-node data transfer over PCIe.
 | **Model Size** | **SDP4Bit** (TFLOPS) | **DUO4Bit** (TFLOPS) |
 |:----------------:|:-------------:|:-------------:|
 | 1.3B           | 118.000     | 117.350     |
