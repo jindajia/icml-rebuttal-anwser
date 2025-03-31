@@ -1,7 +1,7 @@
 # Scalability Experiments
 **Table1: TFLOPs comparison between SDP4Bit and DUO4Bit across different model scales on 32 A100 GPUs.**  
 
-| **Model Size** | **SDP4Bit** | **DUO4Bit** |
+| **Model Size** | **SDP4Bit** (TFLOPS) | **DUO4Bit** (TFLOPS) |
 |:----------------:|:-------------:|:-------------:|
 | 1.3B           | 118.000     | 117.350     |
 | 2.7B           | 126.075     | 125.475     |
