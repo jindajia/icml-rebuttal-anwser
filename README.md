@@ -23,6 +23,11 @@ DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demon
 
 # Low Bandwidth Test on Cloud
 ## Computation v.s. Communication Overlapping performance
+**Table 3: Breakdown experiments with different (1) bandwidth, (2) sequence length, and (3) accumulation step. Even in low-bandwidth environments, larger sequence length and accumulation steps enable full overlap of DUO's communication.**
+<p><strong>Summary:</strong> Longer sequence length → computation ↑, larger accumulation step → computation ↑, lower bandwidth → communication ↑.</p>
+
+
+<em>Conducted on 4 A100 nodes on cloud.</em>
 
 <table>
 <thead>
