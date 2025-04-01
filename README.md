@@ -25,8 +25,8 @@ DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demon
 ## Computation v.s. Communication Overlapping performance
 **Table 3: Breakdown experiments with different (1) bandwidth, (2) sequence length, and (3) accumulation step. Even in low-bandwidth environments, larger sequence length and accumulation steps enable full overlap of DUO's communication.**
 
+<em>Conducted on a cloud environment with 4 nodes, each equipped with 1 A100 GPU. The model used was GPT-350M with tensor parallel size = 1, pipeline parallel size = 1, and micro-batch size = 2.</em>
 <p><strong>Summary:</strong> Longer sequence length → computation ↑, larger accumulation step → computation ↑, lower bandwidth → communication ↑.</p>
-<em>Conducted on 4 A100 nodes on cloud.</em>
 
 <table>
 <thead>
