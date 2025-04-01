@@ -25,56 +25,54 @@ DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demon
 ## Computation v.s. Communication Overlapping performance
 
 <table>
-  <thead>
-    <tr>
-      <th>Bandwidth</th>
-      <th>Sequence Len</th>
-      <th>Acc. Step</th>
-      <th>Method</th>
-      <th>E2E Throughput (Tflops)</th>
-      <th>Grad Comm / Iter (ms)</th>
-      <th>Computation / Iter (ms)</th>
-      <th>Full Overlap</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="12">10 Gbps</td>
-      <td rowspan="6">4096</td>
-      <td>32</td><td>DUO4Bit</td><td>122.6</td><td>2135</td><td>6042</td><td>✅ Yes</td>
-    </tr>
-    <tr><td>32</td><td>SDP4Bit</td><td>123.0</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>16</td><td>DUO4Bit</td><td>122.6</td><td>1959</td><td>3030</td><td>✅ Yes</td></tr>
-    <tr><td>16</td><td>SDP4Bit</td><td>123.1</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>8</td><td>DUO4Bit</td><td>86.7</td><td>2029</td><td>1533</td><td>❌ No</td></tr>
-    <tr><td>8</td><td>SDP4Bit</td><td>117.5</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr>
-      <td rowspan="6">2048</td>
-      <td>32</td><td>DUO4Bit</td><td>83.5</td><td>2215</td><td>3024</td><td>✅ Yes</td>
-    </tr>
-    <tr><td>32</td><td>SDP4Bit</td><td>84.4</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>16</td><td>DUO4Bit</td><td>71.2</td><td>2125</td><td>1545</td><td>❌ No</td></tr>
-    <tr><td>16</td><td>SDP4Bit</td><td>78.8</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>8</td><td>DUO4Bit</td><td>39.0</td><td>2136</td><td>771</td><td>❌ No</td></tr>
-    <tr><td>8</td><td>SDP4Bit</td><td>71.1</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr>
-      <td rowspan="12">5 Gbps</td>
-      <td rowspan="6">4096</td>
-      <td>32</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td>
-    </tr>
-    <tr><td>32</td><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>16</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>16</td><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>8</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>8</td><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr>
-      <td rowspan="6">2048</td>
-      <td>32</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td>
-    </tr>
-    <tr><td>32</td><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>16</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>16</td><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>8</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-    <tr><td>8</td><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
-  </tbody>
+<thead>
+<tr>
+<th>Bandwidth</th>
+<th>Sequence Len</th>
+<th>Acc. Step</th>
+<th>Method</th>
+<th>E2E Throughput (Tflops)</th>
+<th>Grad Comm / Iter (ms)</th>
+<th>Computation / Iter (ms)</th>
+<th>Full Overlap</th>
+</tr>
+</thead>
+<tbody>
+<tr><td rowspan="12">10 Gbps</td><td rowspan="6">4096</td><td rowspan="2">32</td><td>DUO4Bit</td><td>122.6</td><td>2135</td><td rowspan="2">6042</td><td>✅ Yes</td></tr>
+<tr><td>SDP4Bit</td><td>123.0</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>122.6</td><td>1959</td><td rowspan="2">3030</td><td>✅ Yes</td></tr>
+<tr><td>SDP4Bit</td><td>123.1</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>86.7</td><td>2029</td><td rowspan="2">1533</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>117.5</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="6">2048</td><td rowspan="2">32</td><td>DUO4Bit</td><td>83.5</td><td>2215</td><td rowspan="2">3024</td><td>✅ Yes</td></tr>
+<tr><td>SDP4Bit</td><td>84.4</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>71.2</td><td>2125</td><td rowspan="2">1545</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>78.8</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>39.0</td><td>2136</td><td rowspan="2">771</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>71.1</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="12">5 Gbps</td><td rowspan="6">4096</td><td rowspan="2">32</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="6">2048</td><td rowspan="2">32</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="12">2 Gbps</td><td rowspan="6">4096</td><td rowspan="2">32</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="6">2048</td><td rowspan="2">32</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>N/A</td><td>N/A</td><td rowspan="2">N/A</td><td>❓ N/A</td></tr>
+<tr><td>SDP4Bit</td><td>N/A</td><td>N/A</td><td>❓ N/A</td></tr>
+</tbody>
 </table>
