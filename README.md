@@ -70,3 +70,8 @@ DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demon
 <tr><td>SDP4Bit</td><td>65.4</td><td>N/A</td><td>N/A</td></tr>
 </tbody>
 </table>
+
+# Profiling of Pipeline Communication
+**Figure 1: Profiling results 1.3B model with pipeline parallelism enabled. The communication phase in pipeline parallelism is significantly shorter than the computation phase, leaving substantial idle time that can be exploited by DUO's communication. This represents a promising direction for future optimization.**
+
+<img width="1487" alt="Screenshot 2025-04-01 at 6 00 23 AM" src="https://github.com/user-attachments/assets/30ea083d-12d7-4e69-aff9-9d2cbdad00bc" />
