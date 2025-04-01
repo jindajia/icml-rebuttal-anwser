@@ -24,9 +24,8 @@ DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demon
 # Low Bandwidth Test on Cloud
 ## Computation v.s. Communication Overlapping performance
 **Table 3: Breakdown experiments with different (1) bandwidth, (2) sequence length, and (3) accumulation step. Even in low-bandwidth environments, larger sequence length and accumulation steps enable full overlap of DUO's communication.**
+
 <p><strong>Summary:</strong> Longer sequence length → computation ↑, larger accumulation step → computation ↑, lower bandwidth → communication ↑.</p>
-
-
 <em>Conducted on 4 A100 nodes on cloud.</em>
 
 <table>
@@ -68,6 +67,20 @@ DUO consistently achieves comparable end-to-end training speed to SDP4Bit, demon
 <tr><td>SDP4Bit</td><td>77.3</td><td>N/A</td><td>N/A</td></tr>
 <tr><td rowspan="2">8</td><td>DUO4Bit</td><td>22.7</td><td>3378</td><td rowspan="2">791</td><td>❌ No</td></tr>
 <tr><td>SDP4Bit</td><td>65.4</td><td>N/A</td><td>N/A</td></tr>
+
+<tr><td rowspan="12">2 Gbps</td><td rowspan="6">4096</td><td rowspan="2">32</td><td>DUO4Bit</td><td>101.6</td><td>7973</td><td rowspan="2">6038</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>119.4</td><td>N/A</td><td>N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>49.8</td><td>8198</td><td rowspan="2">3045</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>105.0</td><td>N/A</td><td>N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>24.7</td><td>8273</td><td rowspan="2">1558</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>84.8</td><td>N/A</td><td>N/A</td></tr>
+<tr><td rowspan="6">2048</td><td rowspan="2">32</td><td>DUO4Bit</td><td>41.1</td><td>7967</td><td rowspan="2">3048</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>72.7</td><td>N/A</td><td>N/A</td></tr>
+<tr><td rowspan="2">16</td><td>DUO4Bit</td><td>20.1</td><td>8179</td><td rowspan="2">1566</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>59.9</td><td>N/A</td><td>N/A</td></tr>
+<tr><td rowspan="2">8</td><td>DUO4Bit</td><td>10.0</td><td>8126</td><td rowspan="2">839</td><td>❌ No</td></tr>
+<tr><td>SDP4Bit</td><td>43.8</td><td>N/A</td><td>N/A</td></tr>
+
 </tbody>
 </table>
 
